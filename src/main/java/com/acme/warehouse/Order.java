@@ -31,7 +31,10 @@ public class Order {
     }
 
     public void fill(Warehouse warehouse) {
-        filled = warehouse.remove(item, quantity);
+        if (warehouse.hasInventory(item, quantity)) {
+            warehouse.remove(item, quantity);
+            filled = true;
+        }
     }
 
     public boolean isFilled() {

@@ -28,14 +28,16 @@ public class WarehouseImpl implements Warehouse {
     }
 
     @Override
-    public boolean remove(String item, int quantity) {
-        boolean filled = false;
+    public void remove(String item, int quantity) {
         int qtyOnHand = getInventory(item);
         if (quantity <= qtyOnHand) {
             products.put(item, qtyOnHand - quantity);
-            filled = true;
         }
+    }
 
-        return filled;
+    @Override
+    public boolean hasInventory(String item, int quantity) {
+        int qtyOnHand = getInventory(item);
+        return (qtyOnHand >= quantity);
     }
 }

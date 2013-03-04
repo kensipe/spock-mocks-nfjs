@@ -9,5 +9,8 @@ public interface Warehouse {
 
     int getInventory(String item);
 
-    boolean remove(String item, int quantity);
+    void remove(String item, int quantity);
+
+    boolean hasInventory(String item, int quantity);
+
 }
