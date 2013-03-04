@@ -7,6 +7,7 @@ public class Order {
 
     private String item;
     private int quantity;
+    private boolean filled;
 
     public Order(String item, int quantity) {
         this.item = item;
@@ -27,5 +28,13 @@ public class Order {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public void fill(Warehouse warehouse) {
+        filled = warehouse.remove(item, quantity);
+    }
+
+    public boolean isFilled() {
+        return filled;
     }
 }
