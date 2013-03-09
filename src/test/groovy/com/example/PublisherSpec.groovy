@@ -17,7 +17,7 @@ class PublisherSpec extends Specification {
         publisher.add(subscriber2)
 
         when:
-        publisher.fire("event")
+        publisher.publish("event")
 
         then:
         1 * subscriber1.receive("event")
@@ -33,7 +33,7 @@ class PublisherSpec extends Specification {
         publisher.subscribers << subscriber2
 
         when:
-        publisher.fire("event")
+        publisher.publish("event")
 
         then:
         1 * subscriber1.receive(!null)
@@ -53,7 +53,7 @@ class PublisherSpec extends Specification {
         publisher.subscribers << subscriber1 << subscriber2
 
         when:
-        publisher.fire("event")
+        publisher.publish("event")
 
         then:
         1 * subscriber1./rec.*/(!null)
@@ -72,7 +72,7 @@ class PublisherSpec extends Specification {
         publisher.subscribers << subscriber1 << subscriber2
 
         when:
-        publisher.fire("event")
+        publisher.publish("event")
 
         then:
         2 * _.receive("event")
@@ -94,7 +94,7 @@ class PublisherSpec extends Specification {
         publisher.subscribers << subscriber1 << subscriber2
 
         when:
-        publisher.fire("event")
+        publisher.publish("event")
 
         then:
         1 * subscriber1.receive("event") >> { throw new Exception() }

@@ -12,7 +12,7 @@ class Publisher {
         subscribers << subscriber
     }
 
-    def fire(String s) {
+    def publish(String s) {
         subscribers.each {
             try {
                 it.receive(s)
