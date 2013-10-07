@@ -11,7 +11,7 @@ class JavaLanguageSpec extends Specification {
 
     @IgnoreIf({!jvm.java8 })
     def "java 8 feature"() {
-        def friends = ["Brian", "Nate", "Neal", "Raju", "Sara", "Scott", "Venkay"]
+        def friends = ["Brian", "Nate", "Neal", "Raju", "Sara", "Scott", "Venkat"]
 
         expect:
         friends.stream().getFirst() != null
