@@ -22,7 +22,7 @@ class OrderSpockSpec extends Specification {
         order.isFilled()
     }
 
-    def "filling does not remove from warehose if not enough stock"() {
+    def "filling does not remove from warehouse if not enough stock"() {
 
         def order = new Order("Talisker", 51)
 
